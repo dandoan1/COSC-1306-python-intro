@@ -5,6 +5,7 @@ hw1 test
 cosc1306
 @author: dan doan 1986920
 """
+"""
 width = int(input("Enter width size square: "))
 #height = int(input("Enter height size square: "))
 
@@ -26,3 +27,6 @@ for y in range (width):
 
 print ()
 print ("Done!")
+"""
+print ("x")
+print (" "*0, end="x")

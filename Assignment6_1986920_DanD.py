@@ -31,16 +31,14 @@ def right_triangle(request):
 def diamond(request):
     y = 1
     for x in range(1,request+1):
-        if x == 1:
-            print (" "*(request-1) + "#"*x)
-        elif x%2 == 1:
-            print (" "*(request-(y+1)) + "#"*x)
+        if x%2 == 1:
+            print (" "*(request-y) + "#"*(x))
             y = y+1
         else:
             pass
     for x in range(1,request):
         if x%2 == 1:
-            print (" "*y + "#"*(request-x-1))
+            print (" "*(y-1) + "#"*(request-x-1))
             y = y+1
         else:
             pass
