@@ -19,13 +19,13 @@ def picture(num_rows, num_columns):
     for row in range(num_rows):
         for column in range (num_columns):
             # Convert row and column into x and y
-            x = -1 + (2/(num_columns-1) * column)
+            x = -2 + (2.5/(num_columns-1)) * column
             y = 1 - (2/(num_rows-1)) * row
             
             if isMandelbrot(x, y):
-                print ("*", end="")
+                print ("O", end="")
             else:
-                print (".", end="")
+                print ("*", end="")
         print ()    
     
     
