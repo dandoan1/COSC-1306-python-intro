@@ -1,0 +1,290 @@
+1. Given that myList = [16, 6, 5, 4, 3, 34], True or False
+
+(TRUE) 7 not in myList 
+(TRUE) len(myList) == myList[0] - 10
+(FALSE) (myList[-2] > myList[2]) or ('3' in myList)
+(FALSE) myList[-4] < myList[4]
+(FALSE) myList[0] % myList[1] == myList[-1] % myList[-2]
+
+
+2. Consider the same variable myList defined in question 1. What is the output of the following code?
+print(myList[0::2]) 
+
+[16, 5, 3]
+
+
+3. Given a = 10, b = 20, c = 2:
+(b%a == a) and (b//a == b)
+
+False
+
+
+4. Given a = 0, b = 1, and c = False:
+not(a > b) or c
+
+True
+
+
+5. Given myDict = {"a":3, "b":1, "c":4}
+(myDict["a"] - myDict["c"] == myDict["b"]) and (myDict["a"] > myDict.get("d", 0))
+
+False
+
+
+6. Which of the following are correct function definition definitions?
+(BAD)  def print_something(s**2):
+(BAD)  def my_function(b, c+d):
+(BAD)  def compute sum(a,b,c):
+(BAD)  def 2computeSum(a,b):
+(GOOD) def _secret():
+
+
+7. Which of the following statements correctly passes two arguments in the call to the function whatsthis(a,b).
+(GOOD) whatsthis(“Final”, “is easy”)
+(GOOD) whatsthis(a+3, a-3)
+(BAD)  whatsthis(“Home” + “Sweet Home”)
+(GOOD) whatsthis([1,2],[3,4])
+(GOOD) whatsthis((1,2),(3,4))
+(BAD)  whatsthis([1,2])
+(GOOD) whatsthis((1,),(2,))
+
+
+8. What is the output of the following code:
+a = [1,2,3,4,5,6,7,8,9,10]
+
+for i in range(1,4):
+    a = a[i:]
+    print(a)
+
+[2, 3, 4, 5, 6, 7, 8, 9, 10]
+[4, 5, 6, 7, 8, 9, 10]
+[7, 8, 9, 10]
+
+9. What is the output of the following code:
+a = [1,2,3,4,5,6,7,8,9,10]
+
+for i in range(1,4):
+    a = a[:-i]
+    print(a)
+
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+[1, 2, 3, 4, 5, 6, 7]
+[1, 2, 3, 4]
+
+
+10. What is the output of the following code:
+a = [1,4,3,0,2]
+index = 0
+for i in range(10):
+    index = a[index]
+    print(index)
+
+1
+4
+2
+3
+0
+1
+4
+2
+3
+0
+
+
+11. What is the output of the following code:
+i = 0
+j = 32
+
+while i < j:
+    print(i,j)
+    i += 1
+    j //= 2
+
+0 32
+1 16
+2 8
+3 4
+
+
+12.) What is the output of the following code:
+x = ('A', 'B', 'C')
+c,b,a = x
+print(a,b,c)
+
+C B A
+
+
+13. What is the output of the following code?
+def mystery(num):
+    result = [1,1]
+    for i in range(num-2):
+        result.append(result[-1] + result[-2])
+    return result
+
+print(mystery(10))
+
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+
+
+14. What is the output of the following code?
+x = 2
+for y in range(3,18,3):
+    print(x, y, y%x)
+    if y%2 == 0:
+        x += 1
+
+2 3 1
+2 6 0
+3 9 0
+3 12 0
+4 15 3
+
+
+15. What is the output of the following code?
+i = 1
+j = 7
+while i < j:
+    i+= 1
+    print(i + j)
+    j -= 1
+
+print("done")
+
+9
+9
+9
+done
+
+
+16. What is the output of the following code?
+a = 20
+x = 10
+while x < 25:
+    if a < 25:
+        a -= 1
+    x += x
+    
+print(a,x)
+
+18 40
+
+ 
+17. What is the output of the following code? In plain words, what is the function stringy doing?
+def stringy(string1,string2):
+    s = []
+    for c in string1:
+        if c in string2:
+            s.append(c.upper())
+    return s
+
+p = 'hello world'
+q = 'houston'
+print(stringy(p,q))
+
+['H', 'O', 'O']
+This function forms a list of the upper-case versions of the letters that the two string have in common.
+
+
+18. Fill in the mystery line of code so that the following program outputs the numbers:
+1 3 5 7 9 11 13 15 17 19
+
+????????????? # mystery line of code, fill this in
+    print(number, end=’’)
+print()
+
+for number in range(1,20,2):
+
+
+19. What is the output of the following code? In plain words, what is the function mystery doing?
+def mystery(a,b,c):
+    if a>b and a>c:
+        return a
+    else:
+        if b > c:
+            return b
+        else:
+            return c
+
+print(mystery(1,2,3))
+print(mystery(4,8,5))
+
+3
+8
+
+
+20. Write a function that will take a non-empty list of integers. Without changing the original list, the function should remove all
+the zero (0) entries, make all the positive numbers in the list negative, and all the negative numbers in the list positive. It should
+then return the new list.
+
+def list_modify(values):
+    result = []
+    
+    for item in values:
+        if item != 0:
+            result.append(-item)
+    
+    return result
+
+
+21. Write a function that will take in a list of seven(7) floating point numbers. Without changing the original list, remove the largest and smallest number
+in the list. Then compute and return the average of the remaining values.
+
+def middle_average(values):
+    values.sort()
+    
+    total = sum(values[1:-1])
+    
+    return total/5
+
+
+22. Write a function that takes in a phone listing as a dictionary and returns a reverse look-up. 
+The keys of the dictionary are individual names as strings and the
+values associated with them are the corresponding single phone numbers as strings. 
+The resulting dictionary should have the keys as numbers and values as names.
+
+def reverse_lookup(phone_directory):
+    
+    result = {}
+    for name in phone_directory:
+        number = phone_directory[name]
+        result[number] = name
+    
+    return result
+
+
+23. Write a function to execute a ROT-13 cypher (a shift-cypher of 13 characters) on a given string of text and return the result. It should remove all non-letter
+character including spaces and convert all letters to upper case. 
+
+def rot13(text):
+    result = ""
+    alphabet = string.ascii_uppercase
+    for letter in text:
+        if letter.isalpha():
+            letter = letter.upper()
+            index = alphabet.find(letter)
+            index = (index + 13)
+            if index >= 26:
+                index -= 26
+            
+            result += alphabet[index]
+    
+    return result
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
